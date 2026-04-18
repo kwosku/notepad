@@ -24,14 +24,9 @@ def save_file(self):
 
 def new_file(self):
     if self.text_edit.toPlainText():
-        reply = QMessageBox.question(
-            self,
-            "Новый файл",
-            "Вы сохранили текущий файл?",
-            QMessageBox.Yes | QMessageBox.No
-        )
+        reply = QMessageBox.question(self, "Новый файл", "Вы хотите закрыть файл, сохранить изменения?", QMessageBox.Yes | QMessageBox.No)
 
-        if reply == QMessageBox.No:
-            return
+        if reply == QMessageBox.Yes:
+            save_file(self)
 
     self.text_edit.clear()
