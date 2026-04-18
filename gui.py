@@ -18,12 +18,10 @@ class WindowApp(QMainWindow):
 
         # File menu
         file_menu = menubar.addMenu("File")
-        
-        # Подменю
-        submenu = file_menu.addMenu("Submenu")
-        openFile = submenu.addAction("Open File")
-        saveFile = submenu.addAction("Save File")
-        newFile = submenu.addAction("New File")
+
+        openFile = file_menu.addAction("Open File")
+        saveFile = file_menu.addAction("Save File")
+        newFile = file_menu.addAction("New File")
 
         openFile.triggered.connect(lambda: open_file(self))
         saveFile.triggered.connect(lambda: save_file(self))
